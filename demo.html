@@ -1,0 +1,368 @@
+﻿<!-- 
+  名称：沙坡村紫码伪装器
+  version：v1.0
+
+  使用方法：
+  1. 将文件夹中my.jpg替换为自己照片，名字不要改动
+  2. 修改代码中学号、姓名和班级内容为自己的（292、294行内容）
+  3. 用浏览器打开demo.html
+ -->
+
+<!DOCTYPE html>
+ 
+<html lang="zh">
+ 
+<head>
+ 
+<meta charset="UTF-8" />
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+ 
+<title>西安交通大学</title>
+
+<script>
+
+function startTime(){
+
+  var today=new Date();
+
+  var mon=today.getMonth()+1;
+
+  var day=today.getDate();
+
+  var h=today.getHours();
+
+  var m=today.getMinutes();
+
+  var s=today.getSeconds();// 在小于10的数字前加一个‘0’
+
+  document.getElementById('txt-day').innerHTML=mon+"月"+day+"日";
+
+  m=checkTime(m);
+
+  s=checkTime(s);
+
+  document.getElementById('txt-hour').innerHTML=h+":"+m+":"+s;
+
+  t=setTimeout(function(){startTime()},500);
+
+}
+
+function checkTime(i){
+
+  if (i<10){
+
+    i="0" + i;
+
+  }
+
+  return i;
+}
+</script>
+
+ 
+<style>
+ 
+html{
+ 
+font-size:100px;
+ 
+}
+ 
+body{
+ 
+background: white;
+ 
+}
+ 
+body,a,h3,span{
+ 
+padding:0;
+ 
+margin:0;
+ 
+text-decoration: none;
+ 
+}
+ 
+.header{
+ 
+background: #ededed ;
+ 
+height: 0.44rem;
+ 
+font-size:0.15rem;
+
+font-weight:bold;
+ 
+color: black;
+ 
+padding-left:0.17rem;
+ 
+padding-right: 0.25rem;
+ 
+text-align: center;
+ 
+line-height: 0.44rem;
+ 
+ 
+}
+ 
+.header>a{
+ 
+color: black;
+ 
+float: left;
+ 
+}
+ 
+.header>.btn{
+
+float: right;
+
+padding-top:0.1rem;
+
+}
+ 
+.btn>span{
+ 
+border-radius: 100%;
+ 
+display: block;
+ 
+width: 0.04rem;
+ 
+height: 0.04rem;
+ 
+background: black;
+ 
+margin-top: 0.03rem;
+ 
+}
+
+
+.user{
+  height: 1.45rem;
+  background: #7448c1;
+  padding-left: 0.17rem;
+  padding-right: 0.12rem;
+  padding-top: .16rem;
+}
+
+.user>img {
+  width: 1.0rem;
+  height: 1.28rem;
+  object-fit: cover;
+  margin-right: 0.12rem;
+  float: left;
+}
+
+.user>.usr-meg {
+  height: 0.78rem;
+  float: left;
+  color: white;
+  font-size: 0.14rem;
+  margin-left: 0.14rem;
+}
+.user .usr-info1 {
+  margin-bottom: 0.10rem;
+  margin-top: 0.15rem;
+}
+.user .usr-info2 {
+  margin-bottom: 0.15rem;
+  margin-top: 0.20rem;
+}
+
+.tm{
+  height: 4.8rem;
+  padding-left: 0.18rem;
+  background-color: white;
+}
+ 
+.tm-meg{
+  font-size: 0.17rem;
+  margin-top: 0.16rem;
+  color: #7d7d7e;
+}
+
+.tm-info{
+  font-size: 0.26rem;
+  margin-top: 0.04rem;
+  font-weight: bold;
+}
+
+.tm-day{
+  letter-spacing: -0.01rem;
+}
+
+.tm-hour{
+  letter-spacing: -0.01rem;
+  font-size: 0.33rem;
+  margin-left: 0.13rem;
+}
+
+.tm-back, .tm-goto{
+  font-size: 0.14rem;
+  margin-top: 0.15rem;
+  letter-spacing: 0.0rem;
+}
+
+.tm-yellow{
+  color: #f1ae5f;
+  letter-spacing: 0.0rem;
+}
+
+.tm>img {
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-top: 0.12rem;
+  float: left;
+  margin-left: 0.4rem;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 7%;
+}
+.foot{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.26rem; 
+  padding-right: 0.26rem;
+  border-top: 1px solid #E0E0E0;
+}
+
+.foot-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.08rem;
+  color: #979797;
+}
+
+.logo{
+  width: 0.23rem;
+
+}
+.foot-meg{
+  font-size: 0.01rem;
+  letter-spacing: 0.0rem;
+  margin-top: 0.02rem;
+}
+
+.color-qing{
+  color: #63bdbb;
+}
+</style>
+ 
+ 
+</head>
+ 
+<body onload="startTime()">
+ 
+<div class="header">
+ 
+  <a href=""> < </a>
+  
+  交大校园码
+  
+  <div class="btn">
+  
+    <span></span>
+    
+    <span></span>
+    
+    <span></span>
+  
+  </div>
+ 
+</div>
+
+
+ 
+<div class="content">
+ 
+  <div class="user">
+  
+    <img  src="my.jpg"  />
+
+    <div class="usr-meg">
+    
+      <div class="usr-info1">3119105226 王梓杰 研究生</div>
+      
+      <div>电子与信息学部/杨良伟班</div>
+    
+    </div>
+  
+  </div>
+  
+</div>
+
+
+  <div class="tm">
+    
+    <div class="tm-meg">当前时间:</div>
+  
+    <div class="tm-info">
+
+      <a class="tm-day" id="txt-day">05月15日</a>
+
+      <a class="tm-hour" id="txt-hour">18:21:17</a>
+
+    </div>
+
+    <div class="tm-back">已于 2020-05-23 18:29:36 完成报到登记</div>
+
+    <div class="tm-goto">外出时间 <span class="tm-yellow">2020-05-24 12:00</span> 至 <span class="tm-yellow">2020-12-31 10:00</span></div>
+  
+    <img src="zicode.jpg" />
+
+  </div>
+ 
+
+
+<div class="footer">
+  <div class="foot">
+
+    <div class="foot-item">
+
+      <img class="logo" src="foot-logo.jpg" />
+
+      <div class="foot-meg"><span class="color-qing">交大校园码</span></div>
+
+    </div>
+
+    <div class="foot-item">
+
+      <img class="logo" src="foot-logo2.jpg" />
+
+      <div class="foot-meg">返校申请</div>
+
+    </div>
+
+    <div class="foot-item">
+
+      <img class="logo" src="foot-logo2.jpg" />
+
+      <div class="foot-meg">外出申请</div>
+
+    </div>
+    <div class="foot-item">
+
+      <img class="logo" src="foot-logo2.jpg" />
+
+      <div class="foot-meg">转码申请</div>
+
+    </div>
+
+  </div>
+</div>
+ 
+</body>
+ 
+</html>
+ 
